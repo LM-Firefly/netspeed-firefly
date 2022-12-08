@@ -2,8 +2,8 @@
 set -e
 set -x
 
-EXT_HOME=~/.local/share/gnome-shell/extensions/netspeedsimplified@prateekmedia.extension
-PROJECT_HOME=https://raw.githubusercontent.com/prateekmedia/netspeedsimplified/main
+EXT_HOME=~/.local/share/gnome-shell/extensions/netspeed-firefly@LM-Firefly.extension
+PROJECT_HOME=https://raw.githubusercontent.com/LM-Firefly/netspeed-firefly/main
 
 #Remove Old files
 rm -rf ${EXT_HOME}
@@ -19,7 +19,7 @@ curl ${PROJECT_HOME}/metadata.json -o ${EXT_HOME}/metadata.json
 curl ${PROJECT_HOME}/prefs.js -o ${EXT_HOME}/prefs.js
 curl ${PROJECT_HOME}/stylesheet.css -o ${EXT_HOME}/stylesheet.css
 curl ${PROJECT_HOME}/schemas/gschemas.compiled -o ${EXT_HOME}/schemas/gschemas.compiled
-curl ${PROJECT_HOME}/schemas/org.gnome.shell.extensions.netspeedsimplified.gschema.xml -o ${EXT_HOME}/schemas/org.gnome.shell.extensions.netspeedsimplified.gschema.xml
+curl ${PROJECT_HOME}/schemas/org.gnome.shell.extensions.netspeed-firefly.gschema.xml -o ${EXT_HOME}/schemas/org.gnome.shell.extensions.netspeed-firefly.gschema.xml
 
 #Optional files
 curl ${PROJECT_HOME}/LICENSE -o ${EXT_HOME}/LICENSE
@@ -30,4 +30,4 @@ busctl --user call org.gnome.Shell /org/gnome/Shell org.gnome.Shell Eval s 'Meta
 sleep 5
 
 #Enabling Gnome extension.
-gnome-extensions enable netspeedsimplified@prateekmedia.extension
+gnome-extensions enable netspeed-firefly@LM-Firefly.extension

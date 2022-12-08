@@ -2,8 +2,8 @@
 <h1 align="center">Net speed Simplified</h1>
 <p align="center"><b>A Net Speed monitor With Loads of Customization.</b></p>
 <p align="center">
-<a href="https://github.com/prateekmedia/netspeedsimplified/releases">
- <img alt="GitHub release" src="https://img.shields.io/github/v/release/prateekmedia/netspeedsimplified"/></a> <a href="LICENSE"><img alt="License" src="https://img.shields.io/github/license/prateekmedia/netspeedsimplified?color=blue"/></a>
+<a href="https://github.com/LM-Firefly/netspeed-firefly/releases">
+ <img alt="GitHub release" src="https://img.shields.io/github/v/release/LM-Firefly/netspeed-firefly"/></a> <a href="LICENSE"><img alt="License" src="https://img.shields.io/github/license/LM-Firefly/netspeed-firefly?color=blue"/></a>
 </p>
 <p align="center">
  <img src='https://extensions.gnome.org/extension-data/screenshots/screenshot_3724.gif' width="500px"  alt="Screenshot"/>
@@ -32,36 +32,40 @@
 
 ***Supports GNOME 43, for GNOME SHELL < 40 you can use the previous versions of this extension***
 
-**Note** : Full CHANGELOG can be found on [github releases](https://github.com/prateekmedia/netspeedsimplified/releases) page
+**Note** : Full CHANGELOG can be found on [github releases](https://github.com/LM-Firefly/netspeed-firefly/releases) page
 
 #### Features
-- [x] Cleaner UI
-- [x] Adjustable Refresh rate
-- [x] [Preference](#Feature-Highlights-for-Preferences) Menu for extension customization
-- [x] *Vertical Alignment* Support
-- [x] *Two Icon sets* for Indicators
+
+- [X] Cleaner UI
+- [X] Adjustable Refresh rate
+- [X] [Preference](#Feature-Highlights-for-Preferences) Menu for extension customization
+- [X] *Vertical Alignment* Support
+- [X] *Two Icon sets* for Indicators
 
 #### Feature Highlights for Preferences
-- [x] **Lock Mouse Actions** option to Freeze [Mouse Events](#mouse-events)
-- [x] **Advance Position** options to pinpoint where to place the indicator on the Panel
-- [x] **Refresh time** field by which you can change refresh rate value between 1 and 10 seconds
-- [x] **Show Upload First** option to show upload speed first
-- [x] **Color Customizations** for speed indicators
-- [x] **Hide when Disconnected** option
-- [x] **Use Shorten Units** option 
-- [x] **Limit Unit** option
-and more...
 
-If you faced an **issue** then you can **[file an issue here](https://github.com/prateekmedia/netspeedsimplified/issues)**
- 
+- [X] **Lock Mouse Actions** option to Freeze [Mouse Events](#mouse-events)
+- [X] **Advance Position** options to pinpoint where to place the indicator on the Panel
+- [X] **Refresh time** field by which you can change refresh rate value between 1 and 10 seconds
+- [X] **Show Upload First** option to show upload speed first
+- [X] **Color Customizations** for speed indicators
+- [X] **Hide when Disconnected** option
+- [X] **Use Shorten Units** option
+- [X] **Limit Unit** option
+  and more...
+
+If you faced an **issue** then you can **[file an issue here](https://github.com/LM-Firefly/netspeed-firefly/issues)**
+
 #### Modes
+
 1. **Total net speed** in terms of bits per second
-1. **Total net speed** in terms of bytes per second
-1. **Up & down speed** in terms of bits per second
-1. **Up & down speed** in terms of bytes per second
-1. **Total downloads** in terms of bytes (Right click to reset counter)
+2. **Total net speed** in terms of bytes per second
+3. **Up & down speed** in terms of bits per second
+4. **Up & down speed** in terms of bytes per second
+5. **Total downloads** in terms of bytes (Right click to reset counter)
 
 #### Mouse Events
+
 - **Left click**: Cycle through the [modes](#modes).
 - **Right click(in 1-4 modes)**: Toggle the visibility of total transfer data.
 - **Right click(in 5th mode)**: Reset total transfer data
@@ -69,34 +73,37 @@ If you faced an **issue** then you can **[file an issue here](https://github.com
 - **Middle click**: Cycle through the font sizes.
 
 #### *Special Thanks to*
+
 - [biji](https://github.com/biji) for Creating [simplenetspeed](https://github.com/biji/simplenetspeed)
 - [m0hithreddy](https://github.com/m0hithreddy) for his support in rewriting extension.js with Clutter and rewriting readme.md, Adopting Make build system and more..
-[Know More](https://github.com/prateekmedia/netspeedsimplified/graphs/contributors)
+  [Know More](https://github.com/LM-Firefly/netspeed-firefly/graphs/contributors)
 
 <h2 align="center">Installing Manually</h2>
-  
-### Quick install
-For quick install use below command:
-```bash
-bash -c "$(curl -sL https://git.io/Jk28b)"
-```
 
 ### Installing using Make
+
 - **Step 1** : Getting the sources from repository
+
 ```bash
-git clone "https://github.com/prateekmedia/netspeedsimplified.git"
+git clone "https://github.com/LM-Firefly/netspeed-firefly.git"
 ```
+
 - **Step 2** : Running make (install)
+
 ```bash
 make install
 ```
+
 Likewise extension can be **removed** using
+
 ```bash
 make remove
-```  
+```
+
 OR **reinstalled** using
+
 ```bash
 make reinstall
-```  
+```
 
 You can manage the extension using extensions app or [website](https://extensions.gnome.org/local)

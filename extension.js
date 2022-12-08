@@ -7,7 +7,7 @@ const Clutter = imports.gi.Clutter,
     Mainloop = imports.mainloop,
     Me = imports.misc.extensionUtils.getCurrentExtension(),
     ExtensionUtils = imports.misc.extensionUtils,
-    schema = 'org.gnome.shell.extensions.netspeedsimplified',
+    schema = 'org.gnome.shell.extensions.netspeed-firefly',
     ButtonName = "ShowNetSpeedButton",
     rCConst = 4; //Right Click 4 times to toggle Vertical Alignment
 
@@ -18,7 +18,6 @@ let settings, timeout,
     resetNextCount = false,
     resetCount = 0,
     hideCount = 8,
-    B_UNITS;
 
 // Settings
 var crStng; //Initialized in enable()
@@ -48,8 +47,6 @@ function fetchSettings() {
         tsColor: settings.get_string('tscolor'),
         tdColor: settings.get_string('tdcolor')
     };
-
-    B_UNITS = (crStng.shortenUnits) ? ['B', 'K', 'M', 'G', 'T', 'P', 'E', 'Z'] : [' B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB'];
 
     initNs();
 }
@@ -82,7 +79,8 @@ function nsPosAdv() {
 
 function speedToString(amount, rMode = 0) {
 
-    let speed_map = B_UNITS.map(
+    let speed_map;
+    (
         (rMode == 1 && (crStng.mode == 1 || crStng.mode == 3 || crStng.mode == 4)) ? v => v : //KB
             (rMode == 1 && (crStng.mode == 0 || crStng.mode == 2)) ? v => v.toLowerCase() : //kb
                 (crStng.mode == 0 || crStng.mode == 2) ? v => v.toLowerCase() + "/s" : //kb/s
@@ -402,7 +400,7 @@ function enable() {
 function disable() {
     crStng = null;
     settings = null;
-    
+
     Mainloop.source_remove(timeout);
     nsDestroy();
 }

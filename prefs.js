@@ -6,7 +6,7 @@ const ShellVersion = parseFloat(Config.PACKAGE_VERSION)
 
 const Me = imports.misc.extensionUtils.getCurrentExtension(),
     ExtensionUtils = imports.misc.extensionUtils,
-    schema = "org.gnome.shell.extensions.netspeedsimplified"
+    schema = "org.gnome.shell.extensions.netspeed-firefly"
 
 function init() { }
 
@@ -207,7 +207,7 @@ Prefs.prototype = {
                 let rgba = new Gdk.RGBA()
                 rgba.parse(crStng[name])
 
-                //Create ColorButton 
+                //Create ColorButton
                 let colorButton = new Gtk.ColorButton({
                     tooltip_text: tootext
                 })
@@ -377,19 +377,19 @@ Prefs.prototype = {
         new NssToggleBtn(hboxSysColr, "Use System Color Scheme", "systemcolr", "Enabling it will allow changing font color dynamically based on panel color")
 
 
-        //Upload Speed Color 
+        //Upload Speed Color
         let usColorButton = newGtkBox()
         new NssColorBtn(usColorButton, "Upload Speed Color", "uscolor", "Select the upload speed color")
 
-        //Download Speed Color 
+        //Download Speed Color
         let dsColorButton = newGtkBox()
         new NssColorBtn(dsColorButton, "Download Speed Color", "dscolor", "Select the download speed color")
 
-        //Total Speed Color 
+        //Total Speed Color
         let tsColorButton = newGtkBox()
         new NssColorBtn(tsColorButton, "Total Speed Color", "tscolor", "Select the total speed color")
 
-        //Total Download Color 
+        //Total Download Color
         let tdColorButton = newGtkBox()
         new NssColorBtn(tdColorButton, "Total Download Color", "tdcolor", "Select the total download color")
 
