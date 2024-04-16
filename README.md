@@ -30,7 +30,7 @@
  </td>
 </table>
 
-***Supports GNOME 43, for GNOME SHELL < 40 you can use the previous versions of this extension***
+***Supports GNOME 45 and 46, for GNOME SHELL < 45 you can use the previous versions of this extension***
 
 **Note** : Full CHANGELOG can be found on [github releases](https://github.com/LM-Firefly/netspeed-firefly/releases) page
 
@@ -76,7 +76,25 @@ If you faced an **issue** then you can **[file an issue here](https://github.com
 
 - [biji](https://github.com/biji) for Creating [simplenetspeed](https://github.com/biji/simplenetspeed)
 - [m0hithreddy](https://github.com/m0hithreddy) for his support in rewriting extension.js with Clutter and rewriting readme.md, Adopting Make build system and more..
-  [Know More](https://github.com/LM-Firefly/netspeed-firefly/graphs/contributors)
+- [remisiki](https://github.com/remisiki) for adding support for GNOME 45
+- [Know More](https://github.com/LM-Firefly/netspeed-firefly/graphs/contributors)
+
+### Troubleshooting
+
+#### VPN traffics calculated twice
+- Some VPN software creates a tun/tap interface (eg. [WireGuard](https://wireguard.com), [OpenVPN](https://openvpn.net)) and traffics are being calculated twice. Currently interfaces with these naming scheme is filtered out, make sure the interface created by your VPN software fits one of the following:
+  - `lo`: loop-back interface
+  - `ifb[0-9]+`: intermediate functional block pseudo network interface
+  - `lxdbr[0-9]+`: bridge interface created by [LXD](https://linuxcontainers.org/lxd/)
+  - `virbr[0-9]+`: bridge interface created by [LibVirt](https://libvirt.org)
+  - `docker[0-0]+`: bridge interface created by [Docker](https://docker.com)
+  - `veth[0-9a-zA-Z]+`: virtual network interface created by [Docker](https://docker.com)
+  - `br[0-9]+`: bridge interface
+  - `vnet[0-9]+`: virtual network interface
+  - `tun[0-9]+`: TUN (l3 tunnel) interface
+  - `tap[0-9]+`: TAP (l2 tunnel) interface
+  - `wg[0-9]+`: tunnel interface created by [WireGuard](https://wireguard.com)
+  - `waydroid[0-9]+`: tunnel interface created by [Waydroid](https://waydro.id)
 
 <h2 align="center">Installing Manually</h2>
 
